@@ -13,4 +13,31 @@ class Player (models.Model):
     runs = models.IntegerField()
     wickets = models.IntegerField()
 
+class Teamranking (models.Model) :
 
+    position = models.IntegerField()
+    team = models.CharField(max_length=150)
+    rating = models.IntegerField()
+    points = models.IntegerField()
+
+class Teams (models.Model) :
+    team = models.CharField(max_length=150)
+    teamicon = models.ImageField(upload_to='pics')
+    def __str__(self) :
+        return "%s" %(self.team)
+
+class Schedule(models.Model):
+    team1 = models.ForeignKey(Teams,related_name='team1',on_delete=models.CASCADE)
+    team2 = models.ForeignKey(Teams,related_name='team2',on_delete=models.CASCADE)
+    date = models.CharField(max_length=250)
+    time = models.CharField(max_length=150)
+    info = models.CharField(max_length=300)
+
+
+
+ 
+class Teamrankingodi (models.Model):
+    position = models.IntegerField()
+    team = models.CharField(max_length=150)
+    rating = models.IntegerField()
+    points = models.IntegerField()

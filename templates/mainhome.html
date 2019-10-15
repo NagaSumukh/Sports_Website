@@ -1,0 +1,26 @@
+
+
+<h1>Welcome to sports page</h1>
+
+<ul class="d-flex flex-row align-items-start justify-content-start">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+</ul>
+
+
+
+<form action="playerinfo" method='post'>
+    
+    {% csrf_token %}
+    <button type="submit">Tap me to get palyer details</button>
+</form>
+
+<form action="teamranking" method="POST">
+
+    {% csrf_token %}
+    <button type="submit">Tap me to get Team ranking</button>
+</form>
+

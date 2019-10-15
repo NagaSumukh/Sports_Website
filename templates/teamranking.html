@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<table align=center>
+
+   
+<tr>
+  <th>Position</th>
+  <th>Team</th>
+  <th>Rating</th>
+  <th>Points</th>
+</tr>
+
+{% for team in teams %}
+
+<tr>
+  <td>{{team.position}}</td>
+  <td>{{team.team}}</td>
+  <td>{{team.rating}}</td>
+  <td>{{team.points}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<p>}</p>
+</body>
+</html>
