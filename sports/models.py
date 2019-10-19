@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Player (models.Model):
-
     name = models.CharField(max_length=100)
     img = models.ImageField(upload_to='pics')
     battingstyle  = models.CharField(max_length=150)
@@ -14,7 +13,12 @@ class Player (models.Model):
     wickets = models.IntegerField()
 
 class Teamranking (models.Model) :
+    position = models.IntegerField()
+    team = models.CharField(max_length=150)
+    rating = models.IntegerField()
+    points = models.IntegerField()
 
+class Teamrankingodi (models.Model):
     position = models.IntegerField()
     team = models.CharField(max_length=150)
     rating = models.IntegerField()
@@ -33,11 +37,3 @@ class Schedule(models.Model):
     time = models.CharField(max_length=150)
     info = models.CharField(max_length=300)
 
-
-
- 
-class Teamrankingodi (models.Model):
-    position = models.IntegerField()
-    team = models.CharField(max_length=150)
-    rating = models.IntegerField()
-    points = models.IntegerField()
