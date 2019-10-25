@@ -25,7 +25,9 @@ SECRET_KEY = '7ftmnasfn=yxea83e4s53yg4(ul8zjv-$)$8)5^as@7$o*yqfo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'alldaysports.serveo.net','127.0.0.1'
+]
 
 
 # Application definition

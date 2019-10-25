@@ -13,4 +13,4 @@ def mainhome(request):
 
 def teamranking(request):
     teams = Teamranking.objects.all()
-    return render(request,"teamranking.html",{'teams':teams})
+    return render(request,"ranking.html",{'teams':teams})

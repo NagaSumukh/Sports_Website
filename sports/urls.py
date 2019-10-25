@@ -6,7 +6,7 @@ urlpatterns = [
     path('',views.mainhome,name='mainhome'),
     path('mainhome',views.mainhome,name='mainhome'),
     path('playerinfo',views.playerinfo,name='playerinfo'),
-    path('teamranking',views.teamranking,name='teamranking')
+    path('ranking',views.teamranking,name='ranking')
 ]
 
 admin.site.site_header = 'Sports Admin'
