@@ -53,63 +53,64 @@
                         
                       </div>
                       <div class="col-sm-8">
-                          <div>
-                            <div class="card text-center">
-                              <div class="card-header">
-                                <ul class="nav nav-tabs card-header-tabs">
-                                  <li class="nav-item">
-                                    <a class="nav-link active" href="ranking">TEST</a>
-                                    
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="rankingodi">ODI</a>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div class="card-body">
-                                  <div class="col-sm-8">
-                                      <table class="table">
-                                          <thead class="thead-dark">
-                                            <tr>
-                                              <th scope="col">Rank</th>
-                                              <th scope="col">Team</th>
-                                              <th scope="col">Rating</th>
-                                              <th scope="col">Points</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            {% for team in teams %}
-      
-                                            <tr>
-                                              <th scope="row">{{team.position}}</th>
-                                              <th>{{team.team}}</th>
-                                              <td>{{team.rating}}</td>
-                                              <td>{{team.points}}</td>
-                                            </tr>
-      
-                                            {% endfor %}
-                                          </tbody>
-                                        </table>
-                                  </div>
-                                <h5 class="card-title"></h5>
-                                <p class="card-text"></p>
-                              </div>
+                            <div>
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                    <ul class="nav nav-tabs card-header-tabs">
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="ranking">TEST</a>
+                                        
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="rankingodi">ODI</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="col-sm-8">
+                                            <table class="table">
+                                                <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Rank</th>
+                                                    <th scope="col">Team</th>
+                                                    <th scope="col">Rating</th>
+                                                    <th scope="col">Points</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for team in teams %}
+            
+                                                <tr>
+                                                    <th scope="row">{{team.position}}</th>
+                                                    <th>{{team.team}}</th>
+                                                    <td>{{team.rating}}</td>
+                                                    <td>{{team.points}}</td>
+                                                </tr>
+            
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <h5 class="card-title"></h5>
+                                    <p class="card-text"></p>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                       </div>
                       <div class="col-sm-2">
-                          <div class="card border-primary mb-3" style="max-width: 20rem;">
-                              <div class="card-header">News</div>
-                              {% for new in news %}
-                                  <div class="card-body text-primary">
-                                  <h5 class="card-title"><a href="{{new.url}}">{{new.head}}</a></h5>
-                                  <p class="card-text">{{new.info}}</p>
-                                  </div>
-                              {% endfor %} 
-                          </div>
+                        <div class="card border-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header">News</div>
+        
+                                {% for new in news %}
+                                    <div class="card-body text-primary">
+                                    <h5 class="card-title"><a href="{{new.url}}">{{new.head}}</a></h5>
+                                    <p class="card-text">{{new.info}}</p>
+                                    </div>
+                                {% endfor %}
+                                
+                        </div>
                       </div>
                     </div>
-                    
              </div>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
