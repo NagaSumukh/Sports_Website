@@ -22,6 +22,26 @@ class PlayerEng (models.Model):
     runs = models.IntegerField()
     wickets = models.IntegerField()
 
+class PlayerAus (models.Model):
+    name = models.CharField(max_length=100)
+    img = models.ImageField(upload_to='pics')
+    battingstyle  = models.CharField(max_length=150)
+    bowlingstyle = models.CharField(max_length=150)
+    iccrank = models.IntegerField()
+    matches = models.IntegerField()
+    runs = models.IntegerField()
+    wickets = models.IntegerField()
+
+class PlayerSa (models.Model):
+    name = models.CharField(max_length=100)
+    img = models.ImageField(upload_to='pics')
+    battingstyle  = models.CharField(max_length=150)
+    bowlingstyle = models.CharField(max_length=150)
+    iccrank = models.IntegerField()
+    matches = models.IntegerField()
+    runs = models.IntegerField()
+    wickets = models.IntegerField()
+
 class Teamranking (models.Model) :
     position = models.IntegerField()
     team = models.CharField(max_length=150)

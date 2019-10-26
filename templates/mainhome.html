@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseurl %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,7 @@
     <body style="background-color: cyan;" >
 
         
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="mainhome">
             <img src="{% static 'images/logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
             AllDaySports
@@ -93,6 +94,30 @@
             <h5 class="card-title"></h5>
             <p class="card-text"></p>
           </div>
+          <div class="card-body text-primary">
+              <div class="card">
+                <div class"date"><b><font size="0.5">&ensp;26-11-19</b>&ensp;&ensp;<b>Venue:</b>New York</font><br />
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-4" style="width:7rem;">
+                      <div width="10px"><br />
+                        <img src="{% static 'images/india.png' %}" class="india" alt="india" width="50px"><br /><br /><br />
+                        <img src="{% static 'images/Aus.jpg' %}" class="Aus" alt="Aussie" width="50px">
+                        <div class="card-body">
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />VS<br /><br />AUS</font></p></div>
+                    <div class="col-sm-4"><font size="0.6"><b><br /><br /><br /><br/></b></font></div>
+                  </div>
+                </div>
+                <div align="center">
+                  <font size="0.8"><b>Time:18:30</b><br /></font>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
       <!-- 2nd container -->
@@ -138,8 +163,8 @@
             </a>
           </div>
         
-
-
+          <h1>{{time}}</h1>
+          <img src="{{first_team_icon.url}}"  alt="" width="250" height="250">
 
 
 
@@ -168,7 +193,9 @@
                 </div>
         
        
-        </style>
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Fixed bottom</a>
+                  </nav>
 
 
 
