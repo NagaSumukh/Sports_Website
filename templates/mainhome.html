@@ -63,10 +63,6 @@
 
         <center>
           <h1>WELCOME TO</h1>
-          <video width="400" height="300" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-              <source src="{% static 'images/logo.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
         </center>
         
         <!-- <form action="playerinfo" method='post'>
@@ -88,35 +84,37 @@
       <!-- 1st container -->
       <!-- Matches -->
       <div class="col">
-        <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card text-white bg-primary border-primary mb-3" style="max-width: 20rem;">
           <div class="card-header">Matches</div>
           <div class="card-body text-primary">
-            <h5 class="card-title"></h5>
             <p class="card-text"></p>
           </div>
           <div class="card-body text-primary">
+            {% for schedule in schedules %}
               <div class="card">
-                <div class"date"><b><font size="0.5">&ensp;26-11-19</b>&ensp;&ensp;<b>Venue:</b>New York</font><br />
-                </div>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-4" style="width:7rem;">
-                      <div width="10px"><br />
-                        <img src="{% static 'images/india.png' %}" class="india" alt="india" width="50px"><br /><br /><br />
-                        <img src="{% static 'images/Aus.jpg' %}" class="Aus" alt="Aussie" width="50px">
-                        <div class="card-body">
-                          <p class="card-text"></p>
+                  <div class"date"><b><font size="0.5">&ensp;{{schedule.date}}</b>&ensp;&ensp;<b>Venue:</b>{{schedule.info}}</font><br />
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4" style="width:7rem;">
+                        <div width="10px"><br />
+                          <img src="{{ schedule.team1.teamicon.url }}" class="india" alt="india" width="50px"><br /><br /><br/>
+                          <img src="{{ schedule.team2.teamicon.url }}" class="Aus" alt="Aussie" width="50px">
+                          <div class="card-body">
+                            <p class="card-text"></p>
+                          </div>
                         </div>
                       </div>
+                      <div class="col-sm-5"><p><font size="0.6"><br />{{schedule.team1.team}}<br>VS<br>{{schedule.team2.team}}</font></p></div>
+
                     </div>
-                    <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />VS<br /><br />AUS</font></p></div>
-                    <div class="col-sm-4"><font size="0.6"><b><br /><br /><br /><br/></b></font></div>
                   </div>
-                </div>
-                <div align="center">
-                  <font size="0.8"><b>Time:18:30</b><br /></font>
-                </div>
+                  <div align="center">
+                    <font size="0.8"><b>Time: {{schedule.time}}</b><br /></font>
+                  </div>
               </div>
+              <td style="padding-top: 2px;">...</td>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -132,10 +130,13 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img width="300px" height="450px" src="{% static 'images/news_1.jpg' %}" class="d-block w-100" alt="Headlines">
+                  <video width="300px" height="450px" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                      <source src="{% static 'images/logo.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
                   <div class="carousel-caption d-none d-md-block">
                     <h5></h5>
-                    <p>Ganguly Appointed as New BCCI President<p>
+                    <p>WELCOME To ALL DAY SPORTS<p>
                   </div>
               </div>
               <div class="carousel-item">
@@ -162,15 +163,16 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-        
-          <h1>{{time}}</h1>
-          <img src="{{first_team_icon.url}}"  alt="" width="250" height="250">
-
-
+          
+          <!-- {% for sch in sch %}
+          <h1>{{sch.time}}</h1>
+          <h1>{{sch.info}}</h1>
+          <img src="{{sch.first_team_icon.url}}"  alt="" width="250" height="250">
+          {% endfor %} -->
 
         </div>
     </div>
-
+    
                           
 
               <div class="col-sm-3">
@@ -191,24 +193,14 @@
                     </div>
                   </div>
                 </div>
+                <br><br><br><br>
+                <br>
         
        
                 <nav class="navbar navbar-light bg-light">
                     <a class="navbar-brand" href="#">Fixed bottom</a>
                   </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

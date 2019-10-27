@@ -12,7 +12,8 @@ urlpatterns = [
     path('ranking',views.teamranking,name='ranking'),
     path('rankingodi',views.teamrankingodi,name='rankingodi'),
     path('news1',views.news1,name='news1'),
-    path('news2',views.news2,name='news2')
+    path('news2',views.news2,name='news2'),
+    path('news3',views.news3,name='news3')
 ]
 
 admin.site.site_header = 'Sports Admin'

@@ -67,6 +67,7 @@ class Schedule(models.Model):
     time = models.CharField(max_length=150)
     info = models.CharField(max_length=300)
 
+
 class News(models.Model):
     url = models.URLField(max_length=1000)
     head = models.CharField(max_length=500)

@@ -23,20 +23,9 @@ def playerinfosa(request) :
 
 def mainhome(request):
     news = News.objects.all()
-    schedule = Schedule.objects.get(id=1)
-    team1 = schedule.team1_id
-    team2 = schedule.team2_id
-    firsteam = Teams.objects.get(id=team1)
-    secteam = Teams.objects.get(id=team2)
-    time = schedule.time
-    date = schedule.date
-    info = schedule.info
-    first_team_name = firsteam.team
-    sec_team_name = secteam.team
-    first_team_icon = firsteam.teamicon
-    sec_team_icon = secteam.teamicon
-
-    return render(request,"mainhome.html",{'news':news,'time':time,'date':date,'info':info,'first_team_name':first_team_name,'sec_team_name':sec_team_name,'first_team_icon':first_team_icon,'sec_team_icon':sec_team_icon})
+    schedule = Schedule.objects.all()
+    print(schedule)
+    return render(request,"mainhome.html",{'news':news,'schedules':schedule})
 
 def teamranking(request):
     teams = Teamranking.objects.all()
@@ -50,6 +39,17 @@ def teamrankingodi(request):
     return render(request,"rankingodi.html",{'teams':teams,'news':news})
 
 def news1(request):
-    return render(request,"news1.html")
+    news = News.objects.all()
+    schedule = Schedule.objects.all()
+    print(schedule)
+    return render(request,"news1.html",{'news':news,'schedules':schedule})
 def news2(request):
-    return render(request,"news2.html")
+    news = News.objects.all()
+    schedule = Schedule.objects.all()
+    print(schedule)
+    return render(request,"news2.html",{'news':news,'schedules':schedule})
+def news3(request):
+    news = News.objects.all()
+    schedule = Schedule.objects.all()
+    print(schedule)
+    return render(request,"news3.html",{'news':news,'schedules':schedule})
