@@ -73,4 +73,21 @@ class News(models.Model):
     head = models.CharField(max_length=500)
     info = models.CharField(max_length=500)
 
+# class PlayerRankingOdiBat(models.Model):
+#     rank = models.IntegerField()
+#     player = models.CharField(max_length=150)
+#     rating = models.IntegerField()
+#     team = models.ForeignKey(Teams,on_delete=models.CASCADE)
+
+# class PlayerRankingTestBat(models.Model):
+#     rank = models.IntegerField()
+#     player = models.CharField(max_length=150)
+#     rating = models.IntegerField()
+#     team = models.ForeignKey(Teams,on_delete=models.CASCADE)
+
+class Feedback(models.Model):
+    email = models.EmailField(max_length=150)
+    phno = models.IntegerField()
+    feedback = models.CharField(max_length=10000)
+
 

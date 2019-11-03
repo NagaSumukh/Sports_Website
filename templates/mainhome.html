@@ -24,7 +24,7 @@
         
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="mainhome">
-            <img src="{% static 'images/logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
+            <img src="{% static 'images/tab logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
             AllDaySports
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
+                  <ion-icon name="home"></ion-icon>
                   <a class="nav-link" href="mainhome">Home</a>
                 </li>
                 <li class="nav-item">
@@ -61,21 +62,161 @@
             </div>
         </nav>
 
-        <center>
-          <h1>WELCOME TO</h1>
-        </center>
+        <br><br><br><br>
         
-        <!-- <form action="playerinfo" method='post'>
+        <form action="add_feedback" method='post'>
             
             {% csrf_token %}
-            <button type="submit">Tap me to get palyer details</button>
+            <button type="submit">Tap me to give feedback</button>
         </form>
 
-        <form action="teamranking" method="POST">
+        <!-- <form action="teamranking" method="POST">
 
             {% csrf_token %}
             <button type="submit">Tap me to get Team ranking</button>
         </form> -->
+
+        <div class="card-group">
+          <!--first card-->
+          <div class="card bg-light" style="max-width: 20rem;">
+            <div class"date"><b><font size="0.5">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;26-10-19</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Venue:</b>Bangalore</font><br /></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="width:7rem;">
+                  <div width="10px"><br />
+                    <img src="{% static 'images/india.png' %}" class="india" alt="india" width="50px"><br /><br>
+                    <img src="{% static 'images/Aus flag.png' %}" class="Aus" alt="Aussie" width="50px">
+                    <div class="card-body">
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
+              </div>
+            </div>
+            <div align="center">
+              <font size="0.8"><b>India Beat Australia by 54 runs</b><br /></font>
+            </div>
+          </div>
+
+          <!--sec card-->
+          <div class="card bg-light" style="max-width: 20rem;">
+            <div class"date"><b><font size="0.5">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;26-10-19</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Venue:</b>Bangalore</font><br /></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="width:7rem;">
+                  <div width="10px"><br />
+                    <img src="{% static 'images/nz flag.png' %}" class="india" alt="india" width="50px"><br /><br>
+                    <img src="{% static 'images/sa flag.png' %}" class="Aus" alt="Aussie" width="50px">
+                    <div class="card-body">
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
+              </div>
+            </div>
+            <div align="center">
+              <font size="0.8"><b>India Beat Australia by 54 runs</b><br /></font>
+            </div>
+          </div>
+
+          <!--third card-->
+          <div class="card bg-light" style="max-width: 20rem;">
+            <div class"date"><b><font size="0.5">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;26-10-19</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Venue:</b>Bangalore</font><br /></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="width:7rem;">
+                  <div width="10px"><br />
+                    <img src="{% static 'images/Sri-Lanka-flag.jpg' %}" class="india" alt="india" width="50px"><br /><br>
+                    <img src="{% static 'images/sa flag.png' %}" class="Aus" alt="Aussie" width="50px">
+                    <div class="card-body">
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
+              </div>
+            </div>
+            <div align="center">
+              <font size="0.8"><b>India Beat Australia by 54 runs</b><br /></font>
+            </div>
+          </div>
+
+          <!--fourth card-->
+          <div class="card bg-light" style="max-width: 20rem;">
+            <div class"date"><b><font size="0.5">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;26-10-19</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Venue:</b>Bangalore</font><br /></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="width:7rem;">
+                  <div width="10px"><br />
+                    <img src="{% static 'images/india.png' %}" class="india" alt="india" width="50px"><br /><br>
+                    <img src="{% static 'images/sa flag.png' %}" class="Aus" alt="Aussie" width="50px">
+                    <div class="card-body">
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
+              </div>
+            </div>
+            <div align="center">
+              <font size="0.8"><b>India Beat Australia by 54 runs</b><br /></font>
+            </div>
+          </div>
+
+          <!--fifth card-->
+          <div class="card bg-light" style="max-width: 20rem;">
+            <div class"date"><b><font size="0.5">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;26-10-19</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Venue:</b>Bangalore</font><br /></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="width:7rem;">
+                  <div width="10px"><br />
+                    <img src="{% static 'images/WI flag.jpg' %}" class="india" alt="india" width="50px"><br /><br>
+                    <img src="{% static 'images/Aus flag.png' %}" class="Aus" alt="Aussie" width="50px">
+                    <div class="card-body">
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
+              </div>
+            </div>
+            <div align="center">
+              <font size="0.8"><b>India Beat Australia by 54 runs</b><br /></font>
+            </div>
+          </div>
+
+          <!--sixth card-->
+          <div class="card bg-light" style="max-width: 20rem;">
+            <div class"date"><b><font size="0.5">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;26-10-19</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Venue:</b>Bangalore</font><br /></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="width:7rem;">
+                  <div width="10px"><br />
+                    <img src="{% static 'images/eng flag.png' %}" class="india" alt="india" width="50px"><br /><br>
+                    <img src="{% static 'images/nz flag.png' %}" class="Aus" alt="Aussie" width="50px">
+                    <div class="card-body">
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
+              </div>
+            </div>
+            <div align="center">
+              <font size="0.8"><b>India Beat Australia by 54 runs</b><br /></font>
+            </div>
+          </div>
+        </div>
+
+
 
 
 <!-- container -->
@@ -85,7 +226,7 @@
       <!-- Matches -->
       <div class="col">
         <div class="card text-white bg-primary border-primary mb-3" style="max-width: 20rem;">
-          <div class="card-header">Matches</div>
+          <div class="card-header">Upcoming Matches</div>
           <div class="card-body text-primary">
             <p class="card-text"></p>
           </div>
