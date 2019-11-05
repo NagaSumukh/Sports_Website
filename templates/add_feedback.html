@@ -131,10 +131,10 @@
       </div>
       <!-- 2nd container -->
         <div class="col-6">
-          <h1>Please Enter your valuable Feedback</h1>
+          <h1>Please Enter your valuable Feedback {{user.first_name}}</h1>
             <form class="contact-form" method='post' action="add_feedback">
             {% csrf_token %}
-            <div>Enter email id &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input name="email"></div>
+            <div>Enter email id &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input name="email" >{{user.email}}</div>
             <br>
             <div>Enter phone number&ensp; <input name="phno"></div>
             <br>

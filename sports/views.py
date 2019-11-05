@@ -21,7 +21,7 @@ def playerinfosa(request) :
     return render(request,"playerinfosa.html",{'players':players})
 
 def mainhome(request):
-    news = News.objects.all()
+    news = News.objects.all().order_by('id').reverse()
     schedule = Schedule.objects.all()
     return render(request,"mainhome.html",{'news':news,'schedules':schedule})
 
@@ -37,11 +37,13 @@ def teamrankingodi(request):
     return render(request,"rankingodi.html",{'teams':teams,'news':news})
 
 def player_ranking_odi_bat(request):
+    news = News.objects.all()
     players = PlayerRankingOdiBat.objects.all().order_by('id')
-    return render(request,"player_ranking_odi_bat.html",{'players':players})
+    return render(request,"player_ranking_odi_bat.html",{'players':players,'news':news})
 def player_ranking_test_bat(request):
+    news = News.objects.all()
     players = PlayerRankingTestBat.objects.all().order_by('id')
-    return render(request,"player_ranking_test_bat.html",{'players':players})
+    return render(request,"player_ranking_test_bat.html",{'players':players,'news':news})
 
 def news1(request):
     news = News.objects.all()

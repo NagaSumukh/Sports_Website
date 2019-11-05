@@ -56,29 +56,28 @@
                     <a class="dropdown-item" href="player_ranking_test_bat">TEST</a>
                   </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mr-sm-2">
                   <a class="nav-link" href="add_feedback">Feedback</a>
                 </li>
-
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    Hello {{user.first_name}}
+              </ul>
+              <ul class="navbar-nav my-2 my-lg-0">
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <b>WELCOME {{user.first_name}}</b>
                   </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="accounts/logout">Log Out</a>
-                </li>
-
-                {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="accounts/register">Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="accounts/login">Login</a>
-                </li>
-                {% endif %}
-                <!-- <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li> -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="accounts/logout">Log Out</a>
+                  </li>
+  
+                  {% else %}
+                  <li class="nav-item ">
+                      <button type="button" class="btn btn-ligth" onclick="window.location.href = 'accounts/register';">Register</button>
+                    <!-- <a class="nav-link" href="accounts/register">Register</a> -->
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href = 'accounts/login';">Login</button>
+                  </li>
+                  {% endif %}
               </ul>
               <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -289,6 +288,7 @@
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -310,6 +310,13 @@
               </div>
               <div class="carousel-item">
                 <img width="300px" height="450px" src="{% static 'images/wallpaper2.jpg' %}" class="d-block w-100" alt="Headlines2">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p style="color: rgb(60, 10, 153);"><b></b><p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img width="300px" height="450px" src="{% static 'images/bg-img.jpg' %}" class="d-block w-100" alt="Headlines3">
                   <div class="carousel-caption d-none d-md-block">
                     <h5></h5>
                     <p style="color: rgb(60, 10, 153);"><b></b><p>
@@ -349,8 +356,17 @@
                   </div>
                 </div>
                 <br><br><br><br>
-                <br>
-        
+                <!-- <div class="container bg-overlay" style="background-size: cover;background-image:url('https://www.elsetge.cat/imagepost/b/98/987629_cricket-ground-hd-wallpapers.jpg');z-index:10">
+                  <div class="row text-center">
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <h1>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ABOUT US &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</h1>
+                        <h4>You can just use the "<strong>.bg-overlay</strong>" class on any container/element,
+                        and specify the image you want to use and its height.</h4>
+                        <br><br>
+                  </div>
+                </div> -->
        
                 <nav class="navbar navbar-light bg-light">
                     <a class="navbar-brand" href="#">Fixed bottom</a>

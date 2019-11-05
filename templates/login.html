@@ -5,19 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>login</title>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="icon" type="image/png" href="{%static 'images/icons/favicon.ico' %}"/>
-	<link rel="stylesheet" type="text/css" href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{%static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{%static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{%static 'vendor/animate/animate.css' %}">
-	<link rel="stylesheet" type="text/css" href="{%static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{%static 'vendor/select2/select2.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{%static 'css/util.css' %}">
-    <link rel="stylesheet" type="text/css" href="{%static 'css/main.css' %}"> 
+    <!-- Title Page-->
+    <title>Login</title>
+        
+    <!-- Icons font CSS-->
+    <link href="{%static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{%static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{%static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{%static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{%static 'css/main.css' %}" rel="stylesheet" media="all">
     
 </head>
 <body>
@@ -33,67 +35,60 @@
         {% endfor %}
     </div> -->
 
+
+  
+
+
     <form action="login" method="POST">
         {% csrf_token %}
-
-        <div class="limiter">
-            <div class="container-login100">
-                <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-                    <form class="login100-form validate-form">
-                        <span class="login100-form-title p-b-55">
-                            Login
-                        </span>
-
-                        <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="text" name="username" placeholder="username">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <span class="lnr lnr-envelope"></span>
-                            </span>
-                        </div>
-
-                        <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                            <input class="input100" type="password" name="password" placeholder="Password">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <span class="lnr lnr-lock"></span>
-                            </span>
-                        </div>
-
-                        
-                        <div class="container-login100-form-btn p-t-25">
-                            <button class="login100-form-btn">
-                                Login
-                            </button>
-                        </div>
-
-                        {% for message in messages %}
-                            <h3>{{message}}</h3>
-                        {% endfor %}
-
-                        <div class="text-center w-full p-t-115">
-                            <span class="txt1">
-                                Not a member?
-                            </span>
-
-                            <a class="txt1 bo1 hov1" href="register">
-                                Sign up now							
-                            </a>
-                        </div>
-                    </form>
+        <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-4">
+                    <div class="card-body">
+                        <h2 class="title">Login Form</h2>
+                        <form method="POST">
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">User Name</label>
+                                        <input class="input--style-4" type="text" name="username">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Password</label>
+                                        <input class="input--style-4" type="password" name="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                {% for message in messages %}
+                                <h3>{{message}}</h3>
+                                {% endfor %}
+                            </div>
+                            <div class="row row-space">
+                                <div class="p-t-15">
+                                    <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                                </div>
+                                <div class="p-t-15">
+                                    <a href="/mainhome">Go back to Home</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script src="{%static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-    <script src="{%static 'vendor/bootstrap/js/popper.js' %}"></script>
-    <script src="{%static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- Jquery JS-->
+    <script src="{%static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
     <script src="{%static 'vendor/select2/select2.min.js' %}"></script>
-    <script src="{%static 'js/main.js' %}"></script> 
+    <script src="{%static 'vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{%static 'vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{%static 'js/global.js' %}"></script>
 
 
 
