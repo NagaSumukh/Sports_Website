@@ -20,8 +20,6 @@
 </html>
 <html>
     <body style="background-color: cyan;" >
-
-        
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="mainhome">
             <img src="{% static 'images/tab logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
@@ -47,10 +45,37 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="rankingodi">ODI</a>
                     <a class="dropdown-item" href="ranking">TEST</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Player Ranking
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="player_ranking_odi_bat">ODI</a>
+                    <a class="dropdown-item" href="player_ranking_test_bat">TEST</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="add_feedback">Feedback</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    Hello {{user.first_name}}
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="accounts/logout">Log Out</a>
+                </li>
+
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="accounts/register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="accounts/login">Login</a>
+                </li>
+                {% endif %}
                 <!-- <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li> -->
@@ -64,11 +89,7 @@
 
         <br><br><br><br>
         
-        <form action="add_feedback" method='post'>
-            
-            {% csrf_token %}
-            <button type="submit">Tap me to give feedback</button>
-        </form>
+        
 
         <!-- <form action="teamranking" method="POST">
 
@@ -114,7 +135,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><p><font size="0.6"><br />NZ<br /><br />SA</font></p></div>
                 <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
               </div>
             </div>
@@ -137,7 +158,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><p><font size="0.6"><br />SL<br /><br />RSA</font></p></div>
                 <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
               </div>
             </div>
@@ -160,7 +181,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />RSA</font></p></div>
                 <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
               </div>
             </div>
@@ -183,7 +204,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><p><font size="0.6"><br />WI<br /><br />AUS</font></p></div>
                 <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
               </div>
             </div>
@@ -206,7 +227,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4"><p><font size="0.6"><br />IND<br /><br />AUS</font></p></div>
+                <div class="col-sm-4"><p><font size="0.6"><br />ENG<br /><br />NZ</font></p></div>
                 <div class="col-sm-4"><font size="0.6"><b><br />256/08(50.0)<br /><br/>202/10(33.2)</b></font></div>
               </div>
             </div>
@@ -263,7 +284,7 @@
       <!-- CAROUSEL -->
       <div class="col-6">
         <div align="center" class="bd-example">
-          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3000">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -281,17 +302,17 @@
                   </div>
               </div>
               <div class="carousel-item">
-                <img width="300px" height="450px" src="{% static 'images/news_2.jpg' %}" class="d-block w-100" alt="Headlines1">
+                <img width="300px" height="450px" src="{% static 'images/wallpaper.jpg' %}" class="d-block w-100" alt="Headlines1">
                   <div class="carousel-caption d-none d-md-block">
                     <h5></h5>
-                    <p>Ronaldo Scores His 701 Goal in Juve Win<p>
+                    <p style="color: black;"><b>All The News You Need And More</b><p>
                   </div>
               </div>
               <div class="carousel-item">
-                <img width="300px" height="450px" src="{% static 'images/news_3.jpg' %}" class="d-block w-100" alt="Headlines2">
+                <img width="300px" height="450px" src="{% static 'images/wallpaper2.jpg' %}" class="d-block w-100" alt="Headlines2">
                   <div class="carousel-caption d-none d-md-block">
                     <h5></h5>
-                    <p>Djokovic To Take a Break From Tennis to Recover From His </p>
+                    <p style="color: rgb(60, 10, 153);"><b></b><p>
                   </div>
               </div>
             </div>
@@ -304,13 +325,6 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-          
-          <!-- {% for sch in sch %}
-          <h1>{{sch.time}}</h1>
-          <h1>{{sch.info}}</h1>
-          <img src="{{sch.first_team_icon.url}}"  alt="" width="250" height="250">
-          {% endfor %} -->
-
         </div>
     </div>
     

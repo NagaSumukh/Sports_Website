@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Player,PlayerEng,PlayerAus,PlayerSa
-from .models import Teamranking
-from .models import Teamrankingodi
+from .models import Teamranking,Teamrankingodi,PlayerRankingOdiBat,PlayerRankingTestBat
 from .models import News,Schedule,Teams,Feedback
 # Create your views here.
 
@@ -24,7 +23,6 @@ def playerinfosa(request) :
 def mainhome(request):
     news = News.objects.all()
     schedule = Schedule.objects.all()
-    print(schedule)
     return render(request,"mainhome.html",{'news':news,'schedules':schedule})
 
 def teamranking(request):
@@ -37,6 +35,13 @@ def teamrankingodi(request):
     teams = Teamrankingodi.objects.all().order_by('id')
     news = News.objects.all()
     return render(request,"rankingodi.html",{'teams':teams,'news':news})
+
+def player_ranking_odi_bat(request):
+    players = PlayerRankingOdiBat.objects.all().order_by('id')
+    return render(request,"player_ranking_odi_bat.html",{'players':players})
+def player_ranking_test_bat(request):
+    players = PlayerRankingTestBat.objects.all().order_by('id')
+    return render(request,"player_ranking_test_bat.html",{'players':players})
 
 def news1(request):
     news = News.objects.all()
@@ -55,6 +60,8 @@ def news3(request):
     return render(request,"news3.html",{'news':news,'schedules':schedule})
 
 def add_feedback(request):
+    news = News.objects.all()
+    schedule = Schedule.objects.all()
 
     email = request.POST.get('email',False)
     phno = request.POST.get('phno',False)
@@ -62,4 +69,4 @@ def add_feedback(request):
 
     feedback_val = Feedback(email = email,feedback = feedback,phno = phno)
     feedback_val.save()
-    return render(request,"add_feedback.html")
+    return render(request,"add_feedback.html",{'news':news,'schedules':schedule})

@@ -24,7 +24,7 @@
         
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="mainhome">
-            <img src="{% static 'images/logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
+            <img src="{% static 'images/tab logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
             AllDaySports
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,8 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
+                  <ion-icon name="home"></ion-icon>
                   <a class="nav-link" href="mainhome">Home</a>
                 </li>
                 <li class="nav-item">
@@ -46,10 +47,20 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="rankingodi">ODI</a>
                     <a class="dropdown-item" href="ranking">TEST</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Player Ranking
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="player_ranking_odi_bat">ODI</a>
+                    <a class="dropdown-item" href="player_ranking_test_bat">TEST</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="add_feedback">Feedback</a>
+                  </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li> -->
@@ -60,6 +71,7 @@
               </form> -->
             </div>
         </nav>
+
 
         <center>
           <h1>WELCOME TO</h1>
@@ -119,12 +131,17 @@
       </div>
       <!-- 2nd container -->
         <div class="col-6">
+          <h1>Please Enter your valuable Feedback</h1>
             <form class="contact-form" method='post' action="add_feedback">
             {% csrf_token %}
-            <div>Enter email id <input name="email"></div>
-            <div>Enter phone number <input name="phno"></div>
-            <div>Enter your feedback <input name="feedback"></div>
-            <button type="submit">Submit</button>
+            <div>Enter email id &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<input name="email"></div>
+            <br>
+            <div>Enter phone number&ensp; <input name="phno"></div>
+            <br>
+            <div>Enter your feedback&ensp;&ensp; <input name="feedback"></div>
+            <br>
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<button type="submit">Submit</button>
         </form>
 
 
