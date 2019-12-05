@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Player,PlayerEng,PlayerAus,PlayerSa
 from .models import Teamranking,Teamrankingodi,PlayerRankingOdiBat,PlayerRankingTestBat
-from .models import News,Schedule,Teams,Feedback
+from .models import News,Schedule,Teams,Feedback,Discussion
 # Create your views here.
 
 def playerinfo(request) :
@@ -42,7 +42,7 @@ def player_ranking_odi_bat(request):
     return render(request,"player_ranking_odi_bat.html",{'players':players,'news':news})
 def player_ranking_test_bat(request):
     news = News.objects.all()
-    players = PlayerRankingTestBat.objects.all().order_by('id')
+    players = PlayerRankingTestBat.objects.all().order_by('rating').reverse()
     return render(request,"player_ranking_test_bat.html",{'players':players,'news':news})
 
 def news1(request):
@@ -64,11 +64,25 @@ def news3(request):
 def add_feedback(request):
     news = News.objects.all()
     schedule = Schedule.objects.all()
+    feedbacks = Feedback.objects.all().order_by('-id')
+    if request.method == 'POST' :
+        email = request.POST.get('email',False)
+        #email = request.user.email
+        phno = request.POST.get('phno',False)
+        feedback = request.POST.get('feedback',False)
 
-    email = request.POST.get('email',False)
-    phno = request.POST.get('phno',False)
-    feedback = request.POST.get('feedback',False)
+        feedback_val = Feedback(email = email,feedback = feedback,phno = phno)
+        feedback_val.save()
+    return render(request,"add_feedback.html",{'news':news,'schedules':schedule,'feedbacks':feedbacks})
 
-    feedback_val = Feedback(email = email,feedback = feedback,phno = phno)
-    feedback_val.save()
-    return render(request,"add_feedback.html",{'news':news,'schedules':schedule})
+def discussion(request):
+    news = News.objects.all()
+    schedule = Schedule.objects.all()
+    discussions = Discussion.objects.all().order_by('-id')
+    if request.method == 'POST' :
+        email = request.user.email
+        comment = request.POST.get('comment',False)
+
+        discussion = Discussion(email = email,comment=comment)
+        discussion.save()
+    return render(request,"discussion.html",{'news':news,'schedules':schedule,'discussions':discussions})

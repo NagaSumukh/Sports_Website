@@ -16,7 +16,9 @@ urlpatterns = [
     path('news1',views.news1,name='news1'),
     path('news2',views.news2,name='news2'),
     path('news3',views.news3,name='news3'),
-    path('add_feedback',views.add_feedback,name='add_feedback')
+    path('news3',views.news3,name='news4'),
+    path('add_feedback',views.add_feedback,name='add_feedback'),
+    path('discussion',views.discussion,name='discussion')
 ]
 
 admin.site.site_header = 'Sports Admin'

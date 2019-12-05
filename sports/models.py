@@ -90,4 +90,8 @@ class Feedback(models.Model):
     phno = models.IntegerField()
     feedback = models.CharField(max_length=10000)
 
-
+class Discussion(models.Model):
+    email = models.EmailField(max_length=150)
+    time = models.DateTimeField(auto_now=True)
+    comment = models.CharField(max_length=500)
+    

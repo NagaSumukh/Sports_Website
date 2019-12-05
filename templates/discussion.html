@@ -56,12 +56,12 @@
                     <a class="dropdown-item" href="player_ranking_test_bat">TEST</a>
                   </div>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="add_feedback">Feedback</a>
-                </li>
-                <li class="nav-item mr-sm-2">
-                  <a class="nav-link" href="discussion">Discussion</a>
-                </li>
+                  </li>
+                  <li class="nav-item mr-sm-2 active">
+                        <a class="nav-link" href="discussion">Discussion</a>
+                      </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li> -->
@@ -132,30 +132,41 @@
       </div>
       <!-- 2nd container -->
         <div class="col-6">
-          <h1>Please Enter your valuable Feedback {{user.first_name}}</h1>
-            <form class="contact-form" method='post' action="add_feedback">
-            {% csrf_token %}
-            
-            <div>Enter phone number&ensp; <input name="phno"></div>
-            <br>
-            <div>Enter your feedback&ensp;&ensp; <input name="feedback"></div>
-            <br>
-            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<button type="submit">Submit</button>
+          {% if user.is_authenticated %}
+            <h3>Welcome to the discussion {{user.first_name}}</h3>
+              <form class="contact-form" method='post' action="discussion">
+              {% csrf_token %}
+
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">{{user.email}}</span>
+                  </div>
+                  <input type="text" name="comment" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+              <button type="submit" class="btn btn-outline-primary">Submit</button>
+            {% else %}
+              <h3>Please Login to enter Discussion room</h3>
+              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+              <button type="button" class="btn btn-success btn-lg" onclick="window.location.href = 'accounts/login';">Login</button>
+            {% endif %}
         </form>
 
-        <!-- <div class="card border-primary mb-3" style="max-width: 100rem;">
-          <div class="card-header">News</div>
+        <div class="card border-primary mb-3" style="max-width: 100rem;">
+          <div class="card-header">Dsicussion</div>
 
-            {% for feedback in feedbacks %}
+            {% for discussion in discussions %}
             <div class="card-body text-primary">
               <blockquote class="blockquote">
-                <p class="mb-0">{{feedback.feedback}}</p>
-                <footer class="blockquote-footer"> <cite title="Source Title">{{feedback.email}}</cite></footer>
+                <p class="mb-0">{{discussion.comment}}</p>
+                <footer class="blockquote-footer"> <cite title="Source Title">{{discussion.email}}</cite></footer>
               </blockquote>
             </div>
             {% endfor %}
-          </div> -->
+          </div>
 
         </div>
     

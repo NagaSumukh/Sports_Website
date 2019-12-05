@@ -14,12 +14,7 @@
         <link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css' %}">
         <link rel="icon" href="{% static 'images/tab logo.PNG' %}">
     </head>
-<body>
-    
-</body>
-</html>
-<html>
-    <body style="background-color: cyan;" >
+    <body style="background-color:cyan;" >
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="mainhome">
             <img src="{% static 'images/tab logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
@@ -59,12 +54,20 @@
                 <li class="nav-item mr-sm-2">
                   <a class="nav-link" href="add_feedback">Feedback</a>
                 </li>
+                <li class="nav-item mr-sm-2">
+                  <a class="nav-link" href="discussion">Discussion</a>
+                </li>
               </ul>
               <ul class="navbar-nav my-2 my-lg-0">
                   {% if user.is_authenticated %}
                   <li class="nav-item">
                     <b>WELCOME {{user.first_name}}</b>
                   </li>
+                  {% if user.is_superuser %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="http://127.0.0.1:8000/admin">Admin Login</a>
+                    </li>
+                  {% endif %}
                   <li class="nav-item">
                     <a class="nav-link" href="accounts/logout">Log Out</a>
                   </li>
@@ -88,8 +91,6 @@
 
         <br><br><br><br>
         
-        
-
         <!-- <form action="teamranking" method="POST">
 
             {% csrf_token %}
@@ -98,7 +99,7 @@
 
         <div class="card-group">
           <!--first card-->
-          <div class="card bg-light" style="max-width: 20rem;">
+          <div class="card bg-light"  style="max-width: 20rem;">
             <div class"date"><b><font size="0.5">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;26-10-19</b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>Venue:</b>Bangalore</font><br /></div>
             <div class="container">
               <div class="row">
@@ -240,8 +241,8 @@
 
 
 <!-- container -->
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
+  <div class="row align-items-start">
       <!-- 1st container -->
       <!-- Matches -->
       <div class="col">
@@ -292,7 +293,7 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                  <video width="300px" height="450px" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                  <video width="1000px" height="500px" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
                       <source src="{% static 'images/logo.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
@@ -302,21 +303,21 @@
                   </div>
               </div>
               <div class="carousel-item">
-                <img width="300px" height="450px" src="{% static 'images/wallpaper.jpg' %}" class="d-block w-100" alt="Headlines1">
+                <img width="1000px" height="500px" src="{% static 'images/wallpaper.jpg' %}" class="d-block w-100" alt="Headlines1">
                   <div class="carousel-caption d-none d-md-block">
                     <h5></h5>
                     <p style="color: black;"><b>All The News You Need And More</b><p>
                   </div>
               </div>
               <div class="carousel-item">
-                <img width="300px" height="450px" src="{% static 'images/wallpaper2.jpg' %}" class="d-block w-100" alt="Headlines2">
+                <img width="1000px" height="500px" src="{% static 'images/wallpaper2.jpg' %}" class="d-block w-100" alt="Headlines2">
                   <div class="carousel-caption d-none d-md-block">
                     <h5></h5>
                     <p style="color: rgb(60, 10, 153);"><b></b><p>
                   </div>
               </div>
               <div class="carousel-item">
-                <img width="300px" height="450px" src="{% static 'images/bg-img.jpg' %}" class="d-block w-100" alt="Headlines3">
+                <img width="1000px" height="500px" src="{% static 'images/bg-img.jpg' %}" class="d-block w-100" alt="Headlines3">
                   <div class="carousel-caption d-none d-md-block">
                     <h5></h5>
                     <p style="color: rgb(60, 10, 153);"><b></b><p>
@@ -367,11 +368,10 @@
                         <br><br>
                   </div>
                 </div> -->
-       
+                
                 <nav class="navbar navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Fixed bottom</a>
+                    <div><p >@2019 alldayssports.com, All rights reserved</p></div>
                   </nav>
-
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

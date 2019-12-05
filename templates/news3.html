@@ -21,45 +21,79 @@
 <html>
     <body style="background-color: cyan;" >
 
-        
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="mainhome">
-            <img src="{% static 'images/logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
-            AllDaySports
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="mainhome">Home</a>
-                </li>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="mainhome">
+        <img src="{% static 'images/tab logo.PNG' %}" width="60" height="60" class="d-inline-block align-top" alt="">
+        AllDaySports
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <ion-icon name="home"></ion-icon>
+              <a class="nav-link" href="mainhome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="playerinfo">Teams</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Team Rankings
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="rankingodi">ODI</a>
+                <a class="dropdown-item" href="ranking">TEST</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Player Ranking
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="player_ranking_odi_bat">ODI</a>
+                <a class="dropdown-item" href="player_ranking_test_bat">TEST</a>
+              </div>
+            </li>
+            <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="add_feedback">Feedback</a>
+            </li>
+            <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="discussion">Discussion</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav my-2 my-lg-0">
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <b>WELCOME {{user.first_name}}</b>
+              </li>
+              {% if user.is_superuser %}
                 <li class="nav-item">
-                  <a class="nav-link" href="playerinfo">Teams</a>
+                  <a class="nav-link" href="http://127.0.0.1:8000/admin">Admin Login</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Team Rankings
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="rankingodi">ODI</a>
-                    <a class="dropdown-item" href="ranking">TEST</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li> -->
-              </ul>
-              <!-- <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form> -->
-            </div>
-        </nav>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="accounts/logout">Log Out</a>
+              </li>
+
+              {% else %}
+              <li class="nav-item ">
+                  <button type="button" class="btn btn-ligth" onclick="window.location.href = 'accounts/register';">Register</button>
+                <!-- <a class="nav-link" href="accounts/register">Register</a> -->
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-success btn-lg" onclick="window.location.href = 'accounts/login';">Login</button>
+              </li>
+              {% endif %}
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+    </nav>
 
         <center>
           <h1>WELCOME TO</h1>
